@@ -1,4 +1,4 @@
-name: OpenAPI Validation
+name: Deploy OpenAPI YAML
 
 on:
   push:
@@ -6,21 +6,21 @@ on:
       - main # Change this to your repository's default branch
 
 jobs:
-  validate:
-    name: Validate OpenAPI Specification
+  deploy:
+    name: Deploy OpenAPI YAML
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Install Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 14 # Adjust the version to your needs
+      - name: Copy OpenAPI YAML
+        run: cp openapi.yml $GITHUB_WORKSPACE/openapi/index.yml
 
-      - name: Install Speccy
-        run: npm install -g speccy
-
-      - name: Validate OpenAPI Specification
-        run: speccy lint openapi/openapi.yaml
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Deploy OpenAPI YAML"
+          git push
