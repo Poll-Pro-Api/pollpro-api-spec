@@ -1,0 +1,29 @@
+openapi: 3.0.3
+info:
+  version: 0.1.0
+  title: Poll Pro REST API - AI Summarization
+  description: >
+    Poll Pro API provides an api to create polls and vote on polls 
+
+  contact:
+    name: PJ Neethling
+    url: 'https://www.pollpro.co.za'
+    email: admin@pollpro.co.za
+  license:
+    name: GPL-3.0 License
+    url: 'https://www.gnu.org/licenses/gpl-3.0.en.html'
+  x-logo:
+    url: 'https://github.com/Poll-Pro/pollpro-api-spec/blob/main/images/logo.png'
+    altText: Poll Pro Main Page
+tags:
+  - name: Test
+    description: |
+      This is a test description
+servers:
+  - url: 'https://api.pollpro.co.za/v1'
+    description: The API server
+paths:
+  /polls:
+    $ref: 'paths/polls/create-poll.yaml'
+  /health:
+    $ref: 'paths/health.yaml'
