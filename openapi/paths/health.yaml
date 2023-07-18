@@ -2,8 +2,6 @@ get:
   operationId: checkHealth
   summary: Health check
   description: Check the current server health status.
-  tags:
-    - Polls
   responses:
     '200':
         description: The service is alive.

@@ -1,1 +1,32 @@
-type: string
+post:
+  operationId: createPoll
+  summary: Poll
+  description: Create a Poll
+  tags:
+    - Polls
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../components/schemas/CreatePollRequest.yaml'
+    required: true
+  responses:
+    '200':
+      description: >
+        Poll has been created.
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/CreatePollResponse.yaml'
+    '502':
+      description: Server error.
+      content:
+        text/html; charset=utf-8: 
+          schema:
+            $ref: '../../components/schemas/ServerError.yaml'
+    default:
+      description: Unexpected error.
+      content:
+        text/plain; charset=utf-8: 
+          schema:
+            type: string

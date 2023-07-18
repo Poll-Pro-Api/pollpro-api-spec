@@ -1,0 +1,15 @@
+type: object
+properties:
+  pollId:
+    description: This is an ID.
+    type: int
+    example: |-
+      123
+  name:
+    description: Poll Name.
+    type: string
+    example: |-
+      PollName
+required:
+  - pollId
+  - name

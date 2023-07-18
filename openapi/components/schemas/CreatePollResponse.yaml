@@ -1,0 +1,7 @@
+description: Successful Poll
+type: object
+properties:
+  pollId:
+    description: The id of the poll.
+    type: int
+    example: 123
