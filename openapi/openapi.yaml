@@ -1,44 +1,29 @@
 openapi: 3.0.3
 info:
   version: 0.1.0
-  title: Jizt REST API - AI Summarization
+  title: Poll Pro REST API - AI Summarization
   description: >
-    Jizt API provides an easy way of summarizing your text
-    using state-of-the-art NLP models.
+    Poll Pro API provides an API to create polls and vote on polls.
 
   contact:
-    name: Diego Miguel
-    url: 'https://www.jizt.it'
-    email: contact@jizt.it
+    name: PJ Neethling
+    url: 'https://www.pollpro.co.za'
+    email: admin@pollpro.co.za
   license:
     name: GPL-3.0 License
     url: 'https://www.gnu.org/licenses/gpl-3.0.en.html'
   x-logo:
-    url: 'https://raw.githubusercontent.com/dmlls/jizt-api-docs/main/images/logo.png'
-    altText: JIZT Main Page
+    url: 'https://github.com/Poll-Pro/pollpro-api-spec/blob/main/images/logo.png'
+    altText: Poll Pro Main Page
 tags:
-  - name: Summaries
+  - name: Test
     description: |
-      Requesting a summary is a two-step process.
-
-      First, an HTTP POST request should be made (see
-      ["Summarize"](https://docs.api.jizt.it/#operation/requestSummary)). The server
-      will respond with a `summary_id` for your text.
-
-      Then, periodic HTTP GET requests (see ["Get
-      summary"](https://docs.api.jizt.it/#operation/getSummary)) with the previous
-      `summary_id` should be made until the summary is completed. The response will
-      then contain the summary.
-      
-      Please, keep in mind that the summarization process will likely take several
-      seconds.
+      This is a test description
 servers:
-  - url: 'https://api.jizt.it/v1'
+  - url: 'https://api.pollpro.co.za/v1'
     description: The API server
 paths:
-  /summaries/plain-text:
-    $ref: 'paths/summaries/plain-text.yaml'
-  /summaries/plain-text/{summaryId}:
-    $ref: 'paths/summaries/plain-text@{summaryId}.yaml'
-  /healthz:
-    $ref: 'paths/summaries/healthz.yaml'
+  /polls:
+    $ref: 'paths/polls/create-poll.yaml'
+  /health:
+    $ref: 'paths/health.yaml'
