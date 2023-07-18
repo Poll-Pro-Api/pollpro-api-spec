@@ -1,26 +1,21 @@
-name: OpenAPI Validation
-
+name: Build docs
 on:
   push:
     branches:
-      - main # Change this to your repository's default branch
+      - main
 
 jobs:
-  validate:
-    name: Validate OpenAPI Specification
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      - name: Install Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 14 # Adjust the version to your needs
-
-      - name: Install Speccy
-        run: npm install -g speccy
-
-      - name: Validate OpenAPI Specification
-        run: speccy lint openapi/openapi.yaml
+    - uses: actions/checkout@v2
+    - name: Build docs
+      run: ./make.sh
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3 # https://github.com/peaceiris/actions-gh-pages
+      with:
+        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        publish_dir: .
+        force_orphan: true
+        exclude_assets: '.github,openapi,.redocly.yaml,LICENSE,README.md,make.sh'
+        cname: docs.api.jizt.it
