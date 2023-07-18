@@ -8,6 +8,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: List files in the directory
+      run: ls -l
     - uses: actions/checkout@v2
     - name: Build docs
       run: ./make.sh
