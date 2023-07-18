@@ -1,0 +1,5 @@
+description: The model used to generate the summary.
+type: string
+enum:
+  - t5
+example: t5
