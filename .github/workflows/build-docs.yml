@@ -9,6 +9,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: List files in the current directory
+      run: ls -al
+    - name: Show the content of make.sh
+      run: cat make.sh
+    - name: Check the script file's permissions
+      run: ls -l make.sh
+    - name: Run the script
+      run: ./make.sh
+    - name: List files in the current directory after script execution
+      run: ls -al
+    - uses: actions/checkout@v2
     - name: Build docs
       run: ./make.sh
     - name: Deploy to GitHub Pages
