@@ -23,4 +23,4 @@ jobs:
         run: npm install -g speccy
 
       - name: Validate OpenAPI Specification
-        run: speccy lint openapi.yml
+        run: speccy lint openapi/openapi.yaml
