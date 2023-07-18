@@ -3,7 +3,7 @@ info:
   version: 0.1.0
   title: Poll Pro REST API - AI Summarization
   description: >
-    Poll Pro API provides an api to create polls and vote on polls 
+    Poll Pro API provides an API to create polls and vote on polls.
 
   contact:
     name: PJ Neethling
