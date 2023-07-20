@@ -1,25 +1,31 @@
 post:
-  operationId: createPoll
-  summary: Create Poll
-  description: Create a Poll that votes will have votes
+  operationId: createPollVote
+  summary: Create Poll Vote
+  description: Create a vote for a spesific poll
   tags:
     - Polls
   requestBody:
     content:
       application/json:
         schema:
-          $ref: '../../components/schemas/CreatePollRequest.yaml'
+          $ref: '../../components/schemas/CreatePollVoteRequest.yaml'
     required: true
   responses:
     '200':
       description: >
-        Poll has been created.
+        Vote is submitted
       content:
         application/json:
           schema:
-            $ref: '../../components/schemas/CreatePollResponse.yaml'
+            type: string
     '400':
       description: Bad Request - The client's request is malformed or invalid.
+      content:
+        text/plain; charset=utf-8: 
+          schema:
+            type: string
+    '404':
+      description: Not Found - Something is not found.
       content:
         text/plain; charset=utf-8: 
           schema:

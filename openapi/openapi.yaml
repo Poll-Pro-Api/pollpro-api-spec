@@ -25,5 +25,7 @@ servers:
 paths:
   /polls:
     $ref: 'paths/polls/create-poll.yaml'
+  /polls/pollId/vote:
+    $ref: 'paths/polls/create-poll-vote.yaml'
   /health:
     $ref: 'paths/health.yaml'

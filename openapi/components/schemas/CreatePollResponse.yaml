@@ -3,5 +3,37 @@ type: object
 properties:
   pollId:
     description: The id of the poll.
-    type: int
+    type: integer
     example: 123
+  name:
+    description: Poll name
+    type: string
+    example: |-
+      Best VS Plugins
+  description:
+    description: Poll description
+    type: string
+    example: |-
+      Best Visual Studio plugin to use for a developer
+  items:
+    description: List of items
+    type: array
+    items:
+      type: object
+      properties:
+        itemId:
+          description: The id of the item.
+          type: integer
+          example: 123
+        name:
+          description: Item name
+          type: string
+      required:
+        - name
+    example:
+      - itemId: 221
+      - name: Prettify
+      - itemId: 521
+      - name: Spelling Helper
+      - itemId: 621
+      - name: Json Helper
