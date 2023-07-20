@@ -1,15 +1,37 @@
 type: object
 properties:
-  pollId:
-    description: This is an ID.
-    type: int
-    example: |-
-      123
   name:
-    description: Poll Name.
+    description: Poll name
     type: string
     example: |-
-      PollName
+      Best VS Plugins
+  description:
+    description: Poll description
+    type: string
+    example: |-
+      Best Visual Studio plugin to use for a developer
+  items:
+    description: List of items
+    type: array
+    items:
+      type: object
+      properties:
+        name:
+          description: Poll name
+          type: string
+          example: |-
+            Best VS Plugins
+      required:
+        - name
+    example:
+      - name: Best VS Plugins
+      - name: Another Plugin
+      - name: Yet Another Plugin
+  pollId:
+    description: This is an ID.
+    type: integer
+    example: |-
+      123
 required:
   - pollId
   - name
