@@ -16,16 +16,18 @@ info:
     url: 'https://raw.githubusercontent.com/Poll-Pro/pollpro-api-spec/main/images/logo.png'
     altText: Poll Pro Main Page
 tags:
-  - name: Test
+  - name: Poll Pro Api API Documentation
     description: |
-      This is a test description
+      This is the official rest api documentation for the PollPro Api
 servers:
   - url: 'https://api.pollpro.co.za/v1'
     description: The API server
 paths:
-  /polls:
-    $ref: 'paths/polls/create-poll.yaml'
-  /polls/pollId/vote:
-    $ref: 'paths/polls/create-poll-vote.yaml'
   /health:
     $ref: 'paths/health.yaml'
+  /polls:
+    $ref: 'paths/polls/create-poll.yaml'
+  /polls/{pollId}/vote:
+    $ref: 'paths/votes/create-poll-vote.yaml'
+  /polls/{pollId}:
+    $ref: 'paths/polls/get-poll.yaml'

@@ -1,4 +1,4 @@
-description: Successful Poll
+description: Poll Details
 type: object
 properties:
   pollId:
@@ -39,3 +39,13 @@ properties:
         name: Spelling Helper
       - itemId: 621
         name: Json Helper
+  startDate:
+    description: Poll start date and time
+    type: string
+    example: |-
+      2023-07-20 12:00:00.000
+  endDate:
+    description: Poll end date and time
+    type: string
+    example: |-
+      2023-07-25 16:00:00.000

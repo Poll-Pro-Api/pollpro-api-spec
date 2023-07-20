@@ -3,7 +3,7 @@ post:
   summary: Create Poll Vote
   description: Create a vote for a spesific poll
   tags:
-    - Polls
+    - Votes
   requestBody:
     content:
       application/json:
@@ -14,10 +14,6 @@ post:
     '200':
       description: >
         Vote is submitted
-      content:
-        application/json:
-          schema:
-            type: string
     '400':
       description: Bad Request - The client's request is malformed or invalid.
       content:
