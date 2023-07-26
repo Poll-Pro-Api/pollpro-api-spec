@@ -1,6 +1,6 @@
 get:
   operationId: getPoll
-  summary: Get Poll Details
+  summary: Get Poll
   description: Get the details of a Poll
   tags:
     - Polls

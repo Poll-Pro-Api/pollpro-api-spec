@@ -1,7 +1,7 @@
 description: Poll Details
 type: object
 properties:
-  pollId:
+  id:
     description: The id of the poll.
     type: integer
     example: 123
@@ -21,7 +21,7 @@ properties:
     items:
       type: object
       properties:
-        itemId:
+        id:
           description: The id of the item.
           type: integer
           example: 123
@@ -29,15 +29,12 @@ properties:
           description: Item name
           type: string
           example: Prettify
-      required:
-        - itemId
-        - name
     example:
-      - itemId: 221
+      - id: 221
         name: Prettify
-      - itemId: 521
+      - id: 521
         name: Spelling Helper
-      - itemId: 621
+      - id: 621
         name: Json Helper
   startDate:
     description: Poll start date and time

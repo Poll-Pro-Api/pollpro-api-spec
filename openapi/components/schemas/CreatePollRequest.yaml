@@ -40,3 +40,4 @@ properties:
 required:
   - name
   - items
+  - startDate
