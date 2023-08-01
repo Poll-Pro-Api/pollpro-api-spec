@@ -1,8 +1,8 @@
 type: object
 properties:
   itemId:
-    description: The id of the poll item.
-    type: integer
-    example: 123
+    description: The guid id of the poll item.
+    type: string
+    example: e05e22bf-bbf9-4d3d-b6e8-cb18d9de5519
 required:
   - itemId
