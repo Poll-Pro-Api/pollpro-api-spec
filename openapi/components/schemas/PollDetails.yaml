@@ -3,8 +3,8 @@ type: object
 properties:
   id:
     description: The id of the poll.
-    type: integer
-    example: 123
+    type: string
+    example: e05e22bf-bbf9-4d3d-b6e8-cb18d9de5519
   name:
     description: Poll name
     type: string
@@ -23,18 +23,18 @@ properties:
       properties:
         id:
           description: The id of the item.
-          type: integer
-          example: 123
+          type: string
+          example: e05e22bf-bbf9-4d3d-b6e8-cb18d9de5519
         name:
           description: Item name
           type: string
           example: Prettify
     example:
-      - id: 221
+      - id: e05e22bf-bbf9-4d3d-b6e8-cb18d9de5519
         name: Prettify
-      - id: 521
+      - id: e05e22bf-bbf9-4d3d-b6e8-cb18d9de5519
         name: Spelling Helper
-      - id: 621
+      - id: e05e22bf-bbf9-4d3d-b6e8-cb18d9de5519
         name: Json Helper
   startDate:
     description: Poll start date and time
